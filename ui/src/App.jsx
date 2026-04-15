@@ -3,13 +3,15 @@ import Applications from './components/Applications'
 import Pipeline from './components/Pipeline'
 import Reports from './components/Reports'
 import Commands from './components/Commands'
+import Setup from './components/Setup'
 import './App.css'
 
 const TABS = [
   { id: 'applications', label: 'Applications' },
   { id: 'pipeline', label: 'Pipeline' },
   { id: 'reports', label: 'Reports' },
-  { id: 'commands', label: 'Quick Commands' },
+  { id: 'setup', label: 'Setup' },
+  { id: 'commands', label: 'Commands' },
 ]
 
 export default function App() {
@@ -65,8 +67,9 @@ export default function App() {
         {!loading && !error && data && (
           <>
             {tab === 'applications' && <Applications data={data} onRefresh={fetchData} />}
-            {tab === 'pipeline' && <Pipeline data={data} />}
+            {tab === 'pipeline' && <Pipeline data={data} onRefresh={fetchData} />}
             {tab === 'reports' && <Reports data={data} />}
+            {tab === 'setup' && <Setup />}
             {tab === 'commands' && <Commands />}
           </>
         )}
