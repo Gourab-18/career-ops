@@ -32,6 +32,13 @@ bun.lock
 *.mov
 *.mp4
 
+# Personal CV and resume files
+cv.md
+*.pdf
+
+# Claude memory (auto-generated, personal)
+memory/
+
 # Claude Code local
 .claude/settings.local.json
 .claude/memory/
